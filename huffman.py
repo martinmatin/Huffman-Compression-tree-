@@ -19,17 +19,7 @@ def IsFirstChild(noeud,dico):
 while len(tas) >= 2:
 
     occ1, noeud1,dic1 = heappop(tas) # noeud de plus petit poids occ1
-    occ2, noeud2,dic2 = heappop(tas) # noeud de deuxième plus petit poids occ2
-    noeud1=IsFirstChild(noeud1,dic1)
-    noeud2=IsFirstChild(noeud2,dic2)
-
-    parents = occ1+occ2
-    if occ1 < occ2:
-        dico={"0":noeud1,"1":noeud2}
-    else:
-        dico={"0":noeud2,"1":noeud1}
-    tas.append((occ1 + occ2, "",dico))
-
+w
 
 dic =tas[0][2]
 def code(previousCode,dico,finaldico):
@@ -38,7 +28,7 @@ def code(previousCode,dico,finaldico):
 
             finalcode=previousCode+elem
 
-            finaldico=code(finalcode,dico[elem],finaldico)
+            finaldico=code(finalcode,dico[elem],finaldico) #appel récursif
         else:
             finalcode=previousCode+elem
             finaldico[dico[elem]]=finalcode
